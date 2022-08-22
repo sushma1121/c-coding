@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main()
+{
+   int a[20][20],i,j,r,c;
+   int sum=0,n;
+   printf("Enter row and column size:");
+   scanf("%d\t%d",&r,&c);
+   if(r==c)
+   {
+       printf("Enter array elements:");
+       for(i=0;i<r;i++)
+       {
+           for(j=0;j<c;j++)
+           {
+               scanf("%d",&a[i][j]);
+           }
+       }
+       printf("Enter column number:");
+       scanf("%d",&n);
+       for(i=0;i<r;i++)
+       {
+           sum=0;
+           for(j=0;j<c;j++)
+           {
+               sum=sum+a[j][n];
+           }
+       }
+       printf("%d column sum=%d",n,sum);
+       
+   }
+    return 0;
+}
