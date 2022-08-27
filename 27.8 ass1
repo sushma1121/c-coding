@@ -1,0 +1,51 @@
+#include<stdio.h>
+void main()
+{
+	char s1[20],s2[20];
+	int i,j,temp;
+	int x,y,count=0;
+	printf("Enter string s1");
+	gets(s1);
+	printf("Enter string s2");
+	gets(s2);
+	x=strlen(s1);
+	y=strlen(s2);
+	if(x=y)
+	{
+		for(i=0;i<x-1;i++)
+		{
+			for(j=0;j<x-i-1;j++)
+			{
+				if(s1[j]>s1[j+1])
+				{
+					temp=s1[j];
+					s1[j]=s1[j+1];
+					s1[j+1]=temp;
+				}
+			}
+		}
+		puts(s1);
+		for(i=0;i<y-1;i++)
+		{
+			for(j=0;j<y-i-1;j++)
+			{
+				if(s2[j]>s2[j+1])
+				{
+					temp=s2[j];
+					s2[j]=s2[j+1];
+					s2[j+1]=temp;
+				}
+			}
+		}
+		puts(s2);
+	}
+	for(i=0;s1[i]!='\0';i++)
+	{
+		if(s1[i]==s2[i])
+		count++;
+	}
+	if(count==x)
+	 printf("Anagram");
+	else
+	 printf("Not Anagram");
+}
