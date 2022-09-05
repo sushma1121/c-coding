@@ -1,0 +1,19 @@
+#include <stdio.h>
+int main()
+{
+    int n=5,i,x[5];
+    for(i=0;i<5;i++)
+    scanf("%d",&x[i]);
+    int len=n-1;
+    display(x,0,len);
+}                                                     
+
+void display(int x[],int start,int end)
+{
+    if(start>end)
+        return;
+    else
+    printf("%d\t",x[start]);
+    display(x,start+1,end);
+    return 0;
+}
