@@ -1,0 +1,28 @@
+#include<stdio.h>
+void main()
+{
+	int n,i,num;
+	int cnt=0;
+	scanf("%d",&n);
+	scanf("%d",&num);
+	int f1=0,f2=1,f;
+	if(num==f1 || num==f2)
+		printf("Yes\n");
+	else{
+	while(n>0)
+	{
+		f=f1+f2;
+		if(num==f){
+			cnt=1;
+			break;
+		}
+		f1=f2;
+		f2=f;
+		n--;
+	}
+	if(cnt==1)
+	printf("\nyes");
+	else
+	printf("\nno");
+	}
+}
